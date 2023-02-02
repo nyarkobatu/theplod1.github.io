@@ -87,7 +87,7 @@
                         <h5 class="card-title">Report Title</h5>
                         <p><span id="datetext">DD/MMM/YYYY</span> - <span id="vehicleplate2">PLATE</span> - (<span id="servicetypetext"></span>)</p>
                         <h5 class="card-title">Copy BBcode</h5>
-                        <p>[divbox=transparent][justify]<br />
+                        <p id="bbcode">[divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.ibb.co/Mc58JMV/Logo.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
                             [color=#535a6c][b][size=140]PARKING ENFORCEMENT REPORT[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
@@ -115,6 +115,7 @@
                             [b]MDC Record[/b]: [URL=<span id="mdcrt">LINK HERE</span>]ACCESS[/url]<br />
                             <br />
                             [/size][/list][/list][/divbox]</p>
+                            <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
                     </div>
                 </div>
             </div>
@@ -188,6 +189,15 @@
                 $("#citationValue").text(event.target.value);
             });
         }); 
+        function copy_data(containerid) {
+            var range = document.createRange();
+            range.selectNode(containerid); //changed here
+            window.getSelection().removeAllRanges(); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("BBCode Copied");
+        }
     </script>
 </body>
 
