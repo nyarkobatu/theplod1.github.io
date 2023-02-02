@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="moment.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Details:</h5>
+                        <div class="form-group">
+                            <label for="datetime">Date & Time</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                        </div>
+                        <div class="form-group">
+                            <label for="inspector">Inspector Name</label>
+                            <input type="text" id="inspector" class="form-control" placeholder="Inspector Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="typeofservice">Type of Service</label>
+                            <select class="form-control" id="typeofservice">
+                                <option value="" selected disabled>Please Select</option>
+                                <option value="C">Citation</option>
+                                <option value="I">Impound</option>
+                                <option value="CI">Citation & Impound</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehowner">Vehicle Owner</label>
+                            <input type="text" id="vehowner" class="form-control" placeholder="FIRSTNAME LASTNAME">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehplate">Vehicle Plate</label>
+                            <input type="text" id="vehplate" style="text-transform: uppercase;" class="form-control" placeholder="PLATE">
+                        </div>
+                        <div class="form-group">
+                            <label for="impound">Impound Length</label>
+                            <input type="text" id="impound" value="N/A" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="citationreason">Citation Reason</label>
+                            <select class="form-control" id="citationreason">
+                                <option value="No Citation" selected>No Citation</option>
+                                <option value="IC 407. Ilegal Parking">IC 407. Ilegal Parking</option>
+                                <option value="IC 420. Vehicle Registration Violation ">IC 420. Vehicle Registration Violation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="narrative">Narrative</label>
+                            <textarea class="form-control" id="narrative"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="imgveh">Images of Vehicle (imgur.com album)</label>
+                            <input type="text" id="imgveh" class="form-control" value="LINK HERE">
+                        </div>
+                        <div class="form-group">
+                            <label for="mdcr">MDC Record</label>
+                            <input type="text" id="mdcr" class="form-control" value="LINK HERE">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Useful Links</h5>
+                        <ul class="list-style">
+                            <li><a target="_blank" href="https://forum.gta.world/en/topic/78852-san-andreas-penal-code/">Penal Code</a></li>
+                            <li><a target="_blank" href="https://mdc.gta.world/">MDC</a></li>
+                            <li><a target="_blank" href="https://panel.booskit.dev/paperwork-generators/parking-ticket">Generate Parking Ticket</a></li>
+                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=890">Parking Enforcement Records Desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Report Title</h5>
+                        <p><span id="datetext">DD/MMM/YYYY</span> - <span id="vehicleplate2">PLATE</span> - (<span id="servicetypetext"></span>)</p>
+                        <h5 class="card-title">Copy BBcode</h5>
+                        <p>[divbox=transparent][justify]<br />
+                            [table][tr][td][color=transparent]-------[/color][img]https://i.ibb.co/Mc58JMV/Logo.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
+                            [color=#535a6c][b][size=140]PARKING ENFORCEMENT REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
+                            DEPARTMENT OF PUBLIC WORKS<br />
+                            ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
+                            <br />
+                            [b]DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br />
+                            [b]INSPECTOR NAME[/b]: <span id="inspectortext">Name here</span><br />
+                            <br />
+                            [b]TYPE OF SERVICE[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
+                            <span id="citationText">☐</span> Citation[color=transparent]---------..--[/color]<span id="impoundText">☐</span> Impound[color=transparent]-.--..-----[/color]Impound Length: <span id="impoundDays">N/A</span><br />
+                            <br />
+                            [b]Vehicle Owner[/b]: <span id="vehicleowner">FIRSTNAME LASTNAME</span><br />
+                            <br />
+                            [b]Vehicle Plate[/b]: <span id="vehicleplate">PLATE</span><br />
+                            <br />
+                            [b]Vehicle citation/impound reason[/b]: <br /><br />
+                            <span id="citationValue">No Citation</span>
+                            <br /> <br />
+                            <span id="narrativetext"></span>
+                            <br /> <br />
+                            [b]Image of vehicle[/b]: [URL=<span id="imgveht">LINK HERE</span>]ACCESS[/url]<br />
+                            <br />
+                            [b]MDC Record[/b]: [URL=<span id="mdcrt">LINK HERE</span>]ACCESS[/url]<br />
+                            <br />
+                            [/size][/list][/list][/divbox]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            var date = moment();
+            var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
+            var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
+            document.getElementById('datetime').value = currentDate;
+            $("#datetimetext").text(currentDate);
+            $("#datetext").text(currentDate2);
+            $("#datetime").on("change keypress input", function() {
+                var datetime = $("#datetime").val().toUpperCase();
+                const myArray = datetime.split(" ");
+                $("#datetimetext").text(datetime);
+                $("#datetext").text(myArray[0]);
+            });   
+            $("#inspector").on("change keypress input", function() {
+                var inspectortext = $("#inspector").val();
+                $("#inspectortext").text(inspectortext);
+            }); 
+            $("#vehowner").on("change keypress input", function() {
+                var vehicleowner = $("#vehowner").val();
+                $("#vehicleowner").text(vehicleowner);
+            });   
+            $("#vehplate").on("change keypress input", function() {
+                var vehicleplate = $("#vehplate").val().toUpperCase();
+                $("#vehicleplate").text(vehicleplate);
+                $("#vehicleplate2").text(vehicleplate);
+            });   
+            $("#impound").on("change keypress input", function() {
+                var impoundDays = $("#impound").val();
+                $("#impoundDays").text(impoundDays);
+            });  
+            $("#narrative").on("change keypress input", function() {
+                var narrativetext = $("#narrative").val();
+                $("#narrativetext").text(narrativetext);
+            });  
+            $("#imgveh").on("change keypress input", function() {
+                var imgveht = $("#imgveh").val();
+                $("#imgveht").text(imgveht);
+            });  
+            $("#mdcr").on("change keypress input", function() {
+                var mdcrt = $("#mdcr").val();
+                $("#mdcrt").text(mdcrt);
+            });  
+            const selectType = document.querySelector('#typeofservice');
+            selectType.addEventListener('change', (event) => {
+                var typeValue = event.target.value
+                $("#servicetypetext").text(typeValue);
+                if(typeValue == 'C') {
+                    $("#citationText").text("☑");
+                    $("#impoundText").text("☐");
+                }
+                if(typeValue == 'I') {
+                    $("#citationText").text("☐");
+                    $("#impoundText").text("☑");
+                }
+                if(typeValue == 'CI') {
+                    $("#citationText").text("☑");
+                    $("#impoundText").text("☑");
+                }
+            });
+            const selectCitation = document.querySelector('#citationreason');
+            selectCitation.addEventListener('change', (event) => {
+                $("#citationValue").text(event.target.value);
+            });
+        }); 
+    </script>
+</body>
+
+</html>
