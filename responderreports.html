@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LS Gov | Responder Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="moment.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <center><h5 class="card-title">LSGov | Responder Reports</h5></center>
+                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <div class="form-group">
+                            <label for="datetime">Date & Time</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                        </div>
+                        <div class="form-group">
+                            <label for="technicians">Handling Technician(s)</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Technician(s) Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="techniciansbadge">Technician(s) Badge Numbers:</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Technician(s) badge numbers">
+                        </div>
+                        <div class="form-group">
+                            <label for="typeofservice">Type of Service</label>
+                            <select class="form-control" id="typeofservice">
+                                <option value="" selected disabled>Please Select</option>
+                                <option value="T">Towing</option>
+                                <option value="TI">Impound</option>
+                                <option value="M">Maintenance</option>
+                                <option value="SP">Service Pause</option>
+                                <option value="O">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="impound">Impound Length</label>
+                            <input type="text" id="impound" value="N/A" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="reqagency">Requesting Agency</label>
+                            <select class="form-control" id="reqagency">
+                                <option value="" selected disabled>Please Select</option>
+                                <option value="LSPD">LSPD</option>
+                                <option value="LSSD">LSSD</option>
+                                <option value="LSFD">LSFD</option>
+                                <option value="DMEC">DMEC</option>
+                                <option value="SAPR">SAPR</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reqofficial">Requesting Official:</label>
+                            <input type="text" id="reqofficial" class="form-control" placeholder="Requesting Official">
+                        </div>
+                        <div class="form-group">
+                            <label for="narrative">Narrative</label>
+                            <textarea class="form-control" id="narrative"></textarea>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Useful Links</h5>
+                        <ul class="list-style">
+                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=873">Responder Reports</a></li>
+                            <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Report Title</h5>
+                        <p>[RR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
+                        <h5 class="card-title">Copy BBcode</h5>
+                        <p id="bbcode">
+                            [divbox=transparent][justify]<br />
+                            [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
+                            [color=#535a6c][b][size=140]TECHNICIAN RESPONDER REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
+                            DEPARTMENT OF PUBLIC WORKS<br />
+                            ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
+                            <br />
+                            [b]DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br />
+                            [b]RESPONDING TECHNICIANS[/b]: <span id="techtext">Names here</span><br />
+                            <br />
+                            [b]TYPE OF SERVICE[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
+                            <span id="towingText">☐</span> Towing[color=transparent]---------..--[/color]<span id="impoundText">☐</span> Impound[color=transparent]-.--..-----[/color]Impound Length: <span id="impoundDays">N/A</span><br />
+                            <span id="maintText">☐</span> Maintenance[color=transparent]---.---[/color]<span id="serviceText">☐</span> Service Pause[color=transparent].----[/color]<span id="otherText">☐</span> Other<br />
+                            <br />
+                            [b]REQUESTING AGENCY[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
+                            <span id="lspdText">☐</span> LSPD[color=transparent]-------------[/color]<span id="lssdText">☐</span> LSSD[color=transparent]-------------[/color]<span id="lsfdText">☐</span> LSFD<br />
+                            <span id="dmecText">☐</span> DMEC[color=transparent]------------.[/color]<span id="saprText">☐</span> SAPR[color=transparent]------------..[/color]<span id="otherretext">☐</span> Other<br />
+                            <br />
+                            [b]REQUESTING OFFICIAL[/b]: <span id="officialN">Rank Name</span><br />
+                            <br />
+                            [/size][/list][/list][/divbox]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Service Details[/color][/b][/center][/divbox][divbox=transparent]<br />
+                            [center][size=90]Provide the necessary information about the provided service below, such as the location of the incident and the applied measures. <br />
+                            In case of a vehicle towing/impound ensure to provide information about the vehicle make and model, as well as the plate.[/center][/size]<br />
+                            <br />
+                            [list=none][list=none][b]NARRATIVE[/b]:<br />
+                            <span id="narrativetext">Comprehensive Answer</span>
+                            <br />
+                            [/list][/list][/divbox]
+                        </p>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Coded with Love by ThePlod</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            var date = moment();
+            var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
+            var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
+            document.getElementById('datetime').value = currentDate;
+            $("#datetimetext").text(currentDate);
+            $("#datetimetextend").text(currentDate);
+            $("#datetext").text(currentDate2);
+            $("#datetime").on("change keypress input", function() {
+                var datetime = $("#datetime").val().toUpperCase();
+                const myArray = datetime.split(" ");
+                $("#datetimetext").text(datetime);
+                $("#datetext").text(myArray[0]);
+            });   
+            $("#datetimeend").on("change keypress input", function() {
+                var datetime = $("#datetimeend").val().toUpperCase();
+                const myArray = datetime.split(" ");
+                $("#datetimetextend").text(datetime);
+            });   
+            $("#technicians").on("change keypress input", function() {
+                var techtext = $("#technicians").val();
+                $("#techtext").text(techtext);
+            });   
+            $("#techniciansbadge").on("change keypress input", function() {
+                var techbadge = $("#techniciansbadge").val();
+                $("#techbadge").text(techbadge);
+            });   
+            $("#reqofficial").on("change keypress input", function() {
+                var officialN = $("#reqofficial").val();
+                $("#officialN").text(officialN);
+            });  
+            $("#narrative").on("change keypress input", function() {
+                var narrativetext = $("#narrative").val();
+                $("#narrativetext").text(narrativetext);
+            });   
+            $("#impound").on("change keypress input", function() {
+                var impoundDays = $("#impound").val();
+                $("#impoundDays").text(impoundDays);
+            });  
+            const selectType = document.querySelector('#typeofservice');
+            selectType.addEventListener('change', (event) => {
+                var typeValue = event.target.value
+                $("#servicetypetext").text(typeValue);
+                if(typeValue == 'T') {
+                    $("#towingText").text("☑");
+                    $("#impoundText").text("☐");
+                    $("#maintText").text("☐");
+                    $("#serviceText").text("☐");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'TI') {
+                    $("#towingText").text("☑");
+                    $("#impoundText").text("☑");
+                    $("#maintText").text("☐");
+                    $("#serviceText").text("☐");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'M') {
+                    $("#towingText").text("☐");
+                    $("#impoundText").text("☐");
+                    $("#maintText").text("☑");
+                    $("#serviceText").text("☐");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'SP') {
+                    $("#towingText").text("☐");
+                    $("#impoundText").text("☐");
+                    $("#maintText").text("☐");
+                    $("#serviceText").text("☑");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'O') {
+                    $("#towingText").text("☐");
+                    $("#impoundText").text("☐");
+                    $("#maintText").text("☐");
+                    $("#serviceText").text("☐");
+                    $("#otherText").text("☑");
+                }
+                
+            });
+            const selectType2 = document.querySelector('#reqagency');
+            selectType2.addEventListener('change', (event) => {
+                var typeValue = event.target.value
+                if(typeValue == 'LSPD') {
+                    $("#lspdText").text("☑");
+                    $("#lssdText").text("☐");
+                    $("#lsfdText").text("☐");
+                    $("#dmecText").text("☐");
+                    $("#saprText").text("☐");
+                    $("#otherretext").text("☐");
+                }
+                if(typeValue == 'LSSD') {
+                    $("#lspdText").text("☐");
+                    $("#lssdText").text("☑");
+                    $("#lsfdText").text("☐");
+                    $("#dmecText").text("☐");
+                    $("#saprText").text("☐");
+                    $("#otherretext").text("☐");
+                }
+                if(typeValue == 'LSFD') {
+                    $("#lspdText").text("☐");
+                    $("#lssdText").text("☐");
+                    $("#lsfdText").text("☑");
+                    $("#dmecText").text("☐");
+                    $("#saprText").text("☐");
+                    $("#otherretext").text("☐");
+                }
+                if(typeValue == 'DMEC') {
+                    $("#lspdText").text("☐");
+                    $("#lssdText").text("☐");
+                    $("#lsfdText").text("☐");
+                    $("#dmecText").text("☑");
+                    $("#saprText").text("☐");
+                    $("#otherretext").text("☐");
+                }
+                if(typeValue == 'SAPR') {
+                    $("#lspdText").text("☐");
+                    $("#lssdText").text("☐");
+                    $("#lsfdText").text("☐");
+                    $("#dmecText").text("☐");
+                    $("#saprText").text("☑");
+                    $("#otherretext").text("☐");
+                }
+                if(typeValue == 'OTHER') {
+                    $("#lspdText").text("☐");
+                    $("#lssdText").text("☐");
+                    $("#lsfdText").text("☐");
+                    $("#dmecText").text("☐");
+                    $("#saprText").text("☐");
+                    $("#otherretext").text("☑");
+                }
+                
+            });
+        }); 
+        function copy_data(containerid) {
+            var range = document.createRange();
+            range.selectNode(containerid); //changed here
+            window.getSelection().removeAllRanges(); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("BBCode Copied");
+        }
+    </script>
+</body>
+
+</html>
