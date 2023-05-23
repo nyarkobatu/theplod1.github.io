@@ -129,6 +129,7 @@
     <script>
         $(document).ready(function(){
             var date = moment();
+            new Date().toLocaleString("en-US", {timeZone: "Atlantic/Reykjavik"})
             var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
             var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
