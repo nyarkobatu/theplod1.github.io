@@ -86,7 +86,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Report Title</h5>
-                        <p><span id="datetext">DD/MMM/YYYY</span> - <span id="vehicleplate2">PLATE</span> - (<span id="servicetypetext"></span>)</p>
+                        <p id="bbtitle"2><span id="datetext">DD/MMM/YYYY</span> - <span id="vehicleplate2">PLATE</span> - (<span id="servicetypetext"></span>)</p>
                         <h5 class="card-title">Copy BBcode</h5>
                         <p id="bbcode">[divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.ibb.co/Mc58JMV/Logo.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
@@ -116,6 +116,7 @@
                             [b]MDC Record[/b]: [URL=<span id="mdcrt">LINK HERE</span>]ACCESS[/url]<br />
                             <br />
                             [/size][/list][/list][/divbox]</p>
+                            <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
                             <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
                     </div>
                 </div>

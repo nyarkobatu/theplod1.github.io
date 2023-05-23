@@ -83,7 +83,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Report Title</h5>
-                        <p>[RR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
+                        <p id="bbtitle">[RR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
                         <h5 class="card-title">Copy BBcode</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
@@ -117,6 +117,7 @@
                             <br />
                             [/list][/list][/divbox]
                         </p>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
                         <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
                     </div>
                 </div>
