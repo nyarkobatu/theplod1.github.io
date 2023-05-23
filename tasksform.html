@@ -147,7 +147,7 @@
     </script>
     <script>
         $(document).ready(function(){
-            var date = moment();
+            var date = moment.utc();
             var currentDate = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
             $("#datetext").text(currentDate);
