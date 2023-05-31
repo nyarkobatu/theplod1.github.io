@@ -178,10 +178,9 @@
                 var taskloc = $("#locationT").val();
                 $("#taskloc").text(taskloc);
             });
-            $("#narrative").on("change keypress input", function() {
-                var narrativetext = $("#narrative").val();
-                $("#narrativetext").text(narrativetext);
-            });   
+            document.querySelector('#narrative').addEventListener('keyup', function() {
+                document.querySelector('#narrativetext').innerText = this.value;
+            });
 
             $("#images").on("change keypress input", function() {
                 var imgs = $("#images").val();

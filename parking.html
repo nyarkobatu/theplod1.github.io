@@ -158,10 +158,9 @@
                 var impoundDays = $("#impound").val();
                 $("#impoundDays").text(impoundDays);
             });  
-            $("#narrative").on("change keypress input", function() {
-                var narrativetext = $("#narrative").val();
-                $("#narrativetext").text(narrativetext);
-            });  
+            document.querySelector('#narrative').addEventListener('keyup', function() {
+                document.querySelector('#narrativetext').innerText = this.value;
+            });
             $("#imgveh").on("change keypress input", function() {
                 var imgveht = $("#imgveh").val();
                 $("#imgveht").text(imgveht);

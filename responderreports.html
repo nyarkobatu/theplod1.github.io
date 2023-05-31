@@ -160,10 +160,9 @@
                 var officialN = $("#reqofficial").val();
                 $("#officialN").text(officialN);
             });  
-            $("#narrative").on("change keypress input", function() {
-                var narrativetext = $("#narrative").val();
-                $("#narrativetext").text(narrativetext);
-            });   
+            document.querySelector('#narrative').addEventListener('keyup', function() {
+                document.querySelector('#narrativetext').innerText = this.value;
+            });  
             $("#impound").on("change keypress input", function() {
                 var impoundDays = $("#impound").val();
                 $("#impoundDays").text(impoundDays);

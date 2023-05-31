@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LS Gov | Parking Enforcement</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="moment.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <center><h5 class="card-title">LSGov | Parking Enforcement</h5></center>
+                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <div class="form-group">
+                            <label for="narrative">Code from MDC</label>
+                            <textarea class="form-control" id="narrative" rows="20"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="imgveh">Image of Vehicle</label>
+                            <input type="text" id="imgveh" class="form-control" value="LINK HERE">
+                        </div>
+                        <div class="form-group">
+                            <label for="mdcr">MDC Record</label>
+                            <input type="text" id="mdcr" class="form-control" value="LINK HERE">
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Useful Links</h5>
+                        <ul class="list-style">
+                            <li><a target="_blank" href="https://forum.gta.world/en/topic/78852-san-andreas-penal-code/">Penal Code</a></li>
+                            <li><a target="_blank" href="https://mdc.gta.world/">MDC</a></li>
+                            <li><a target="_blank" href="https://panel.booskit.dev/paperwork-generators/parking-ticket">Generate Parking Ticket</a></li>
+                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=891">Parking Enforcement Records Desk</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Report Title</h5>
+                        <p id="bbtitle"2><span id="datetext">DD/MMM/YYYY</span> - <span id="vehicleplate2">PLATE</span> - (C)</p>
+                        <h5 class="card-title">Copy BBcode</h5>
+                        <p id="bbcode">[divbox=transparent][justify]<br />
+                            [table][tr][td][color=transparent]-------[/color][img]https://i.ibb.co/Mc58JMV/Logo.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
+                            [color=#535a6c][b][size=140]PARKING ENFORCEMENT REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
+                            DEPARTMENT OF PUBLIC WORKS<br />
+                            ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
+                            <br />
+                            [b]DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br />
+                            [b]INSPECTOR NAME[/b]: <span id="inspectortext">Name here</span><br />
+                            <br />
+                            [b]TYPE OF SERVICE[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
+                            <span id="citationText">☑</span> Citation[color=transparent]---------..--[/color]<span id="impoundText">☐</span> Impound[color=transparent]-.--..-----[/color]Impound Length: <span id="impoundDays">N/A</span><br />
+                            <br />
+                            [b]Vehicle Owner[/b]: <span id="vehicleowner">FIRSTNAME LASTNAME</span><br />
+                            <br />
+                            [b]Vehicle Plate[/b]: <span id="vehicleplate">PLATE</span><br />
+                            <br />
+                            [b]Vehicle citation/impound reason[/b]: <br />
+                            <span id="citationValue"></span>
+                            <br /><br />Offenses:<br />
+                            [list]
+                            <span id="narrativetext"></span>
+                            [/list]
+                            <br />
+                            [b]MDC Record[/b]: [URL=<span id="mdcrt">LINK HERE</span>]ACCESS[/url]<br />
+                            <br />
+                            [b]Image of vehicle[/b]: <br />[img]<span id="imgveht">LINK HERE</span>[/img]<br />
+                            [/size][/list][/list][/divbox]</p>
+                            <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
+                            <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Coded with Love by ThePlod</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#narrative").on("change keypress input", function() {
+                var narrativetext = $("#narrative").val();
+                const splitStrong = narrativetext.split("strong");
+                const splitList = narrativetext.split("ul");
+                const splitList2 = narrativetext.split("<ul>");
+                const inspname = splitStrong[1];
+                const dateTicket = splitStrong[5];
+                const timeTicket = splitStrong[7];
+                const licensePlateArray = splitStrong[11];
+                const registeredArray = splitStrong[13];
+                const inspector = inspname.replace(/[^a-zA-Z0-9 ]/g, '');
+                const ticketDateArray = dateTicket.replace(/[^a-zA-Z0-9 ]/g, '');
+                const ticketTimeArray = timeTicket.replace(/[^a-zA-Z0-9 ]/g, '');
+                const licensePlate = licensePlateArray.replace(/[^a-zA-Z0-9 ]/g, '');
+                const registeredOwner = registeredArray.replace(/[^a-zA-Z0-9 ]/g, '');
+                const narrative = splitList[1];
+                const narrative2 = splitList2[1];
+                const narrative3 = splitList2[2];
+                const fullnnarrative1 = narrative.replace(/(<([^>]+)>)/gi, "");
+                const fullnnarrative = fullnnarrative1.replace(/[^a-zA-Z0-9 .,$-]/g, "");
+                var slash = "/";
+                var ticketDate1 = [ticketDateArray.slice(0, 5), slash, ticketDateArray.slice(5)].join('');
+                var ticketDate = [ticketDate1.slice(0, 2), slash, ticketDate1.slice(2)].join('');
+                var ticketTime = [ticketTimeArray.slice(0, 2), ":", ticketTimeArray.slice(2)].join('');
+                var ticketDateTime = ticketDate + " " + ticketTime;
+
+                //Replace
+                var listcitation = narrative2.replace("<li>", "");
+                const listcitationfull1 = listcitation.replace(/(<([^>]+)>)/gi, "");
+                var listoffenses = narrative3.replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "").replace("<li>", "[*]").replace("</li>", "");
+                var listoffencesfull = listoffenses.split("</ul>");
+                //Remove the citation reason text
+                var listcitationfull = listcitationfull1.replace("Citation Reason(s):", "");
+                $("#inspectortext").text(inspector);
+                $("#datetimetext").text(ticketDateTime);
+                $("#datetext").text(ticketDate);
+                $("#vehicleplate").text(licensePlate);
+                $("#vehicleplate2").text(licensePlate);
+                $("#vehicleowner").text(registeredOwner);
+                $("#citationValue").text(listcitationfull);
+                $("#narrativetext").text(listoffencesfull[0]);
+                
+            });  
+            $("#imgveh").on("change keypress input", function() {
+                var imgveht = $("#imgveh").val();
+                $("#imgveht").text(imgveht);
+            });  
+            $("#mdcr").on("change keypress input", function() {
+                var mdcrt = $("#mdcr").val();
+                $("#mdcrt").text(mdcrt);
+            });  
+        }); 
+        function copy_data(containerid) {
+            var range = document.createRange();
+            range.selectNode(containerid); //changed here
+            window.getSelection().removeAllRanges(); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("BBCode Copied");
+        }
+    </script>
+</body>
+
+</html>
