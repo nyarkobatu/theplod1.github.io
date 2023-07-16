@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LS Gov | Public Service Reports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="moment.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <center><h5 class="card-title">LSGov | Incident Reports</h5></center>
+                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <div class="form-group">
+                            <label for="datetime">Incident Date & Time</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                        </div>
+                        <div class="form-group">
+                            <label for="technicians">Employee Involved</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Employee Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Incident location</label>
+                            <input type="text" id="location" class="form-control" placeholder="Incident Location">
+                        </div>
+                        <div class="form-group">
+                            <label for="techniciansbadge">Technician(s) Badge Numbers:</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Technician(s) badge numbers">
+                        </div>
+                        <div class="form-group">
+                            <label for="typeofservice">Type of Incident</label>
+                            <select class="form-control" id="typeofservice">
+                                <option value="" selected disabled>Please Select</option>
+                                <option value="T">Traffic Collision</option>
+                                <option value="A">Accident / Injury</option>
+                                <option value="V">Violence</option>
+                                <option value="O">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="narrative">Narrative</label>
+                            <textarea class="form-control" id="narrative"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="images">Images (Split with comma)</label>
+                            <textarea class="form-control" id="images"></textarea>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Useful Links</h5>
+                        <ul class="list-style">
+                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=874">Public Service Reports</a></li>
+                            <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Report Title</h5>
+                        <p id="bbtitle">[IR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
+                        <h5 class="card-title">Copy BBcode</h5>
+                        <p id="bbcode">
+                            [divbox=transparent][justify]<br />
+                            [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size]<br />
+                            [color=transparent]------------------------------------------[/color]<br />
+                            [color=#535a6c][b][size=140]INCIDENT REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
+                            DEPARTMENT OF PUBLIC WORKS<br />
+                            ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br /><br />
+                            [b]INCIDENT DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br /><br />
+                            [b]EMPLOYEE INVOLVED[/b]: <span id="techtext">Name here</span><br /><br />
+                            [b]INCIDENT LOCATION[/b]: <span id="locationtext">Location Name</span><br />
+                            [b]TYPE OF INCIDENT[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
+                            <span id="tcText">☐</span> Traffic Collision[color=transparent]---..-----[/color]<span id="accidentText">☐</span> Accident / Injury<br />
+                            <span id="violenceText">☐</span> Violence[color=transparent]---------------[/color]<span id="otherText">☐</span> Other<br />
+                            [/size][/list][/list][/divbox]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Incident Details[/color][/b][/center][/divbox][divbox=transparent]<br />
+                            [center][size=90]Please provide as much detail as you can about the incident that you are reporting. If this involves an injury, please detail what injuries and if you required any <br />
+                            medical treatment. If it is an incident involving violence, please detail what was happening at the time, and what the level of violence was.  [/center][/size]<br />
+                            [list=none][list=none][b]NARRATIVE[/b]: <br />
+                            <span id="narrativetext">Comprehensive Answer</span><br />
+                            [altspoiler=OOC RP SCREENSHOT]<br />
+                            [img]imagehere[/img][/altspoiler]<br />
+                            [/list][/list][/divbox]<br />
+                            <br />
+                            Supervisor Response Format<br />
+                            [code]<br />
+                            [color=#535a6c][b][size=130]Secretary / Supervisor Review[/size][/b][/color][hr][/hr]<br />
+                            [br][/br]<br />
+                            [list=none][b]Name[/b]<br />
+                            Firstname Lastname<br />
+                            <br />
+                            [b]Position[/b]<br />
+                            Current Position<br />
+                            <br />
+                            [b]Director / Deputy Director informed?[/b] (If you deem it as a serious incident)<br />
+                            Yes/No<br />
+                            <br />
+                            [b]Review[/b]<br />
+                            Details<br />
+                            [/list]<br />
+                            <br />
+                            [br][/br]<br />
+                        </p>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Coded with Love by ThePlod</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            var date = moment.utc();
+            var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
+            var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
+            document.getElementById('datetime').value = currentDate;
+            $("#datetimetext").text(currentDate);
+            $("#datetimetextend").text(currentDate);
+            $("#datetext").text(currentDate2);
+            $("#datetime").on("change keypress input", function() {
+                var datetime = $("#datetime").val().toUpperCase();
+                const myArray = datetime.split(" ");
+                $("#datetimetext").text(datetime);
+                $("#datetext").text(myArray[0]);
+            });    
+            $("#technicians").on("change keypress input", function() {
+                var techtext = $("#technicians").val();
+                $("#techtext").text(techtext);
+            });   
+            $("#location").on("change keypress input", function() {
+                var techtext = $("#location").val();
+                $("#locationtext").text(techtext);
+            }); 
+            $("#techniciansbadge").on("change keypress input", function() {
+                var techbadge = $("#techniciansbadge").val();
+                $("#techbadge").text(techbadge);
+            });    
+            document.querySelector('#narrative').addEventListener('keyup', function() {
+                document.querySelector('#narrativetext').innerText = this.value;
+            });
+            const selectType = document.querySelector('#typeofservice');
+            selectType.addEventListener('change', (event) => {
+                var typeValue = event.target.value
+                $("#servicetypetext").text(typeValue);
+                if(typeValue == 'T') {
+                    $("#tcText").text("☑");
+                    $("#accidentText").text("☐");
+                    $("#violenceText").text("☐");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'A') {
+                    $("#tcText").text("☐");
+                    $("#accidentText").text("☑");
+                    $("#violenceText").text("☐");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'V') {
+                    $("#tcText").text("☐");
+                    $("#accidentText").text("☐");
+                    $("#violenceText").text("☑");
+                    $("#otherText").text("☐");
+                }
+                if(typeValue == 'O') {
+                    $("#tcText").text("☐");
+                    $("#accidentText").text("☐");
+                    $("#violenceText").text("☐");
+                    $("#otherText").text("☑");
+                }
+                
+            });
+            $("#images").on("change keypress input", function() {
+                var imgs = $("#images").val();
+                var imgss = imgs.split(","), i;
+                var allimgs = "";
+                for (i = 0; i< imgss.length; i++) {
+                    var newimg = "[img]";
+                    newimg += imgss[i];
+                    newimg += "[/img]";
+                    allimgs += newimg;
+                }
+                $("#imgs").text(allimgs);
+            }); 
+        }); 
+        function copy_data(containerid) {
+            var range = document.createRange();
+            range.selectNode(containerid); //changed here
+            window.getSelection().removeAllRanges(); 
+            window.getSelection().addRange(range); 
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("BBCode Copied");
+        }
+    </script>
+</body>
+
+</html>
