@@ -17,53 +17,53 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><h5 class="card-title">LSGov | Responder Reports</h5></center>
-                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <center><h5 class="card-title">LSGov | Responder Raporları</h5></center>
+                        <a href="/"> <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center> </a>
                         <div class="form-group">
-                            <label for="datetime">Date & Time</label>
-                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                            <label for="datetime">Tarih & Saat</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AAA/YYYY SS:DD">
                         </div>
                         <div class="form-group">
-                            <label for="technicians">Handling Technician(s)</label>
-                            <input type="text" id="technicians" class="form-control" placeholder="Technician(s) Name">
+                            <label for="technicians">İlgili Teknisyen(ler)</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Teknisyen Adları">
                         </div>
                         <div class="form-group">
-                            <label for="techniciansbadge">Technician(s) Badge Numbers:</label>
-                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Technician(s) badge numbers">
+                            <label for="techniciansbadge">Teknisyen(lerin) Rozet Numarası:</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Teknisyen(lerin) Rozet Numarası">
                         </div>
                         <div class="form-group">
-                            <label for="typeofservice">Type of Service</label>
+                            <label for="typeofservice">Hizmet Türleri</label>
                             <select class="form-control" id="typeofservice">
-                                <option value="" selected disabled>Please Select</option>
-                                <option value="T">Towing</option>
-                                <option value="TI">Impound</option>
-                                <option value="M">Maintenance</option>
-                                <option value="SP">Service Pause</option>
-                                <option value="O">Other</option>
+                                <option value="" selected disabled>Lütfen Seçin</option>
+                                <option value="T">Çekici</option>
+                                <option value="TI">El Koyma</option>
+                                <option value="M">Bakım</option>
+                                <option value="SP">Hizmet Durdurma</option>
+                                <option value="O">Diğer</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="impound">Impound Length</label>
+                            <label for="impound">El Koyma Süresi</label>
                             <input type="text" id="impound" value="N/A" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="reqagency">Requesting Agency</label>
+                            <label for="reqagency">Talep Gerçekleştiren Kurum</label>
                             <select class="form-control" id="reqagency">
-                                <option value="" selected disabled>Please Select</option>
+                                <option value="" selected disabled>Lütfen Seçin</option>
                                 <option value="LSPD">LSPD</option>
                                 <option value="LSSD">LSSD</option>
                                 <option value="LSFD">LSFD</option>
                                 <option value="DMEC">DMEC</option>
-                                <option value="SAPR">SAPR</option>
-                                <option value="OTHER">Other</option>
+                                <option value="ULSA">ULSA</option>
+                                <option value="OTHER">Diğer</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="reqofficial">Requesting Official:</label>
-                            <input type="text" id="reqofficial" class="form-control" placeholder="Requesting Official">
+                            <label for="reqofficial">Talep Gerçekleştiren Yetkili:</label>
+                            <input type="text" id="reqofficial" class="form-control" placeholder="Yetkili Adı">
                         </div>
                         <div class="form-group">
-                            <label for="narrative">Narrative</label>
+                            <label for="narrative">Anlatım</label>
                             <textarea class="form-control" id="narrative"></textarea>
                         </div>
                         
@@ -71,9 +71,9 @@
                 </div>
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h5 class="card-title">Useful Links</h5>
+                        <h5 class="card-title">Önemli Linkler</h5>
                         <ul class="list-style">
-                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=873">Responder Reports</a></li>
+                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=873">Responder Raporları</a></li>
                             <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
                         </ul>
                     </div>
@@ -82,55 +82,55 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Report Title</h5>
-                        <p id="bbtitle">[RR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
-                        <h5 class="card-title">Copy BBcode</h5>
+                        <h5 class="card-title">Rapor Başlığı</h5>
+                        <p id="bbtitle">[RR] - <span id="datetext">GG/AAA/YYYY</span> (<span id="servicetypetext">TÜR</span>) - <span id="techbadge">ROZET NUMARALARI</span></p>
+                        <h5 class="card-title">BBCode'ı Kopyala</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]TECHNICIAN RESPONDER REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]TEKNİSYEN RESPONDER RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Genel Bilgilendirme[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
                             <br />
-                            [b]DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br />
-                            [b]RESPONDING TECHNICIANS[/b]: <span id="techtext">Names here</span><br />
+                            [b]TARİH & SAAT[/b]: <span id="datetimetext">GG/AAA/YYYY SS:DD</span><br />
+                            [b]YANITLAYAN TEKNİSYENLER[/b]: <span id="techtext">İsimler Buraya</span><br />
                             <br />
-                            [b]TYPE OF SERVICE[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
-                            <span id="towingText">☐</span> Towing[color=transparent]---------..--[/color]<span id="impoundText">☐</span> Impound[color=transparent]-.--..-----[/color]Impound Length: <span id="impoundDays">N/A</span><br />
-                            <span id="maintText">☐</span> Maintenance[color=transparent]---.---[/color]<span id="serviceText">☐</span> Service Pause[color=transparent].----[/color]<span id="otherText">☐</span> Other<br />
+                            [b]HİZMET TÜRLERİ[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="towingText">[cb]</span> Çekici[color=transparent]---------..--[/color]<span id="impoundText">[cb]</span> El Koyma[color=transparent]-.--..-----[/color]El Koyma Süresi: <span id="impoundDays">N/A</span><br />
+                            <span id="maintText">[cb]</span> Maintenance[color=transparent]---.---[/color]<span id="serviceText">[cb]</span> Hizmet Durdurma[color=transparent].----[/color]<span id="otherText">[cb]</span> Diğer<br />
                             <br />
-                            [b]REQUESTING AGENCY[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
-                            <span id="lspdText">☐</span> LSPD[color=transparent]-------------[/color]<span id="lssdText">☐</span> LSSD[color=transparent]-------------[/color]<span id="lsfdText">☐</span> LSFD<br />
-                            <span id="dmecText">☐</span> DMEC[color=transparent]------------.[/color]<span id="saprText">☐</span> SAPR[color=transparent]------------..[/color]<span id="otherretext">☐</span> Other<br />
+                            [b]TALEP GERÇEKLEŞTİREN KURUM[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="lspdText">[cb]</span> LSPD[color=transparent]-------------[/color]<span id="lssdText">[cb]</span> LSSD[color=transparent]-------------[/color]<span id="lsfdText">[cb]</span> LSFD<br />
+                            <span id="dmecText">[cb]</span> DMEC[color=transparent]------------.[/color]<span id="ulsaText">[cb]</span> ULSA[color=transparent]------------..[/color]<span id="otherretext">[cb]</span> Other<br />
                             <br />
-                            [b]REQUESTING OFFICIAL[/b]: <span id="officialN">Rank Name</span><br />
+                            [b]TALEP GERÇEKLEŞTİREN YETKİLİ[/b]: <span id="officialN">Rank Name</span><br />
                             <br />
                             [/size][/list][/list][/divbox]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]Service Details[/color][/b][/center][/divbox][divbox=transparent]<br />
-                            [center][size=90]Provide the necessary information about the provided service below, such as the location of the incident and the applied measures. <br />
-                            In case of a vehicle towing/impound ensure to provide information about the vehicle make and model, as well as the plate.[/center][/size]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Hizmet Detayları[/color][/b][/center][/divbox][divbox=transparent]<br />
+                            [center][size=90]Aşağıda verilen hizmetle ilgili olarak olayın yeri ve uygulanan önlemler gibi gerekli bilgileri sağlayınız.<br />
+                            Bir aracın çekilmesi/el konulması durumunda, aracın markası, modeli ve plakası hakkında bilgi verdiğinizden emin olun.[/center][/size]<br />
                             <br />
-                            [list=none][list=none][b]NARRATIVE[/b]:<br />
-                            <span id="narrativetext">Comprehensive Answer</span>
+                            [list=none][list=none][b]ANLATIM[/b]:<br />
+                            <span id="narrativetext">Detaylı Cevap</span>
                             <br />
                             [/list][/list][/divbox]
                         </p>
-                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
-                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Başlığı Kopyala</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Kodu Kopyala</button>
                     </div>
                 </div>
             </div>
         </div>
-        <p>Coded with Love by ThePlod</p>
+        <p>ThePlod tarafından kodlandı, Syllania tarafından yerelleştirildi.</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script>
         $(document).ready(function(){
-            var date = moment.utc();
+            var date = moment.utc().add(3, 'hours');
             var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
             var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
@@ -172,39 +172,39 @@
                 var typeValue = event.target.value
                 $("#servicetypetext").text(typeValue);
                 if(typeValue == 'T') {
-                    $("#towingText").text("☑");
-                    $("#impoundText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#serviceText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#towingText").text("[cbc]");
+                    $("#impoundText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#serviceText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'TI') {
-                    $("#towingText").text("☑");
-                    $("#impoundText").text("☑");
-                    $("#maintText").text("☐");
-                    $("#serviceText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#towingText").text("[cbc]");
+                    $("#impoundText").text("[cbc]");
+                    $("#maintText").text("[cb]");
+                    $("#serviceText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'M') {
-                    $("#towingText").text("☐");
-                    $("#impoundText").text("☐");
-                    $("#maintText").text("☑");
-                    $("#serviceText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
+                    $("#maintText").text("[cbc]");
+                    $("#serviceText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'SP') {
-                    $("#towingText").text("☐");
-                    $("#impoundText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#serviceText").text("☑");
-                    $("#otherText").text("☐");
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#serviceText").text("[cbc]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'O') {
-                    $("#towingText").text("☐");
-                    $("#impoundText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#serviceText").text("☐");
-                    $("#otherText").text("☑");
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#serviceText").text("[cb]");
+                    $("#otherText").text("[cbc]");
                 }
                 
             });
@@ -212,52 +212,52 @@
             selectType2.addEventListener('change', (event) => {
                 var typeValue = event.target.value
                 if(typeValue == 'LSPD') {
-                    $("#lspdText").text("☑");
-                    $("#lssdText").text("☐");
-                    $("#lsfdText").text("☐");
-                    $("#dmecText").text("☐");
-                    $("#saprText").text("☐");
-                    $("#otherretext").text("☐");
+                    $("#lspdText").text("[cbc]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
                 }
                 if(typeValue == 'LSSD') {
-                    $("#lspdText").text("☐");
-                    $("#lssdText").text("☑");
-                    $("#lsfdText").text("☐");
-                    $("#dmecText").text("☐");
-                    $("#saprText").text("☐");
-                    $("#otherretext").text("☐");
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cbc]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
                 }
                 if(typeValue == 'LSFD') {
-                    $("#lspdText").text("☐");
-                    $("#lssdText").text("☐");
-                    $("#lsfdText").text("☑");
-                    $("#dmecText").text("☐");
-                    $("#saprText").text("☐");
-                    $("#otherretext").text("☐");
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cbc]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
                 }
                 if(typeValue == 'DMEC') {
-                    $("#lspdText").text("☐");
-                    $("#lssdText").text("☐");
-                    $("#lsfdText").text("☐");
-                    $("#dmecText").text("☑");
-                    $("#saprText").text("☐");
-                    $("#otherretext").text("☐");
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cbc]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
                 }
                 if(typeValue == 'SAPR') {
-                    $("#lspdText").text("☐");
-                    $("#lssdText").text("☐");
-                    $("#lsfdText").text("☐");
-                    $("#dmecText").text("☐");
-                    $("#saprText").text("☑");
-                    $("#otherretext").text("☐");
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cbc]");
+                    $("#otherretext").text("[cb]");
                 }
                 if(typeValue == 'OTHER') {
-                    $("#lspdText").text("☐");
-                    $("#lssdText").text("☐");
-                    $("#lsfdText").text("☐");
-                    $("#dmecText").text("☐");
-                    $("#saprText").text("☐");
-                    $("#otherretext").text("☑");
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cbc]");
                 }
                 
             });

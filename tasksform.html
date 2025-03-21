@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LS Gov | Task & Workshifts Form</title>
+    <title>LS Gov | Görevlendirme & Vardiya Formu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -17,42 +17,42 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><h5 class="card-title">LSGov | Task & Workshifts Form</h5></center>
-                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <center><h5 class="card-title">LSGov | Görevlendirme & Vardiya Formu</h5></center>
+                        <a href="/"> <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center> </a>
                         <div class="form-group">
-                            <label for="datetime">Task Date</label>
-                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY">
+                            <label for="datetime">Görev Tarihi</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AAA/YYYY">
                         </div>
                         <div class="form-group">
-                            <label for="streetname">Street Name</label>
+                            <label for="streetname">Sokak Adı</label>
                             <input type="text" id="streetname" class="form-control" placeholder="Street Name">
                         </div>
                         <div class="form-group">
-                            <label for="positionT">Position Type</label>
+                            <label for="positionT">Kıdem Türü</label>
                             <select class="form-control" id="positionT">
-                                <option value="" selected disabled>Please Select</option>
-                                <option value="Inspector">Inspector</option>
+                                <option value="" selected disabled>Lütfen Seçin</option>
+                                <!--<option value="Inspector">Inspector</option>-->
                                 <option value="Supervisor">Supervisor</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Firstname Lastname">
+                            <label for="name">İsim Soyisim</label>
+                            <input type="text" id="name" class="form-control" placeholder="İsim Soyisim">
                         </div>
                         <div class="form-group">
-                            <label for="positionname">Position</label>
-                            <input type="text" id="positionname" class="form-control" placeholder="Current Position">
+                            <label for="positionname">Rütbe</label>
+                            <input type="text" id="positionname" class="form-control" placeholder="Güncel Rütbe">
                         </div>
                         <div class="form-group">
-                            <label for="narrative">Task Description</label>
+                            <label for="narrative">Görev Açıklaması</label>
                             <textarea class="form-control" id="narrative"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="locationT">Location of Task</label>
-                            <input type="text" id="locationT" class="form-control" placeholder="Location of Task">
+                            <label for="locationT">Görev Konumu</label>
+                            <input type="text" id="locationT" class="form-control" placeholder="Görevin Konumu">
                         </div>
                         <div class="form-group">
-                            <label for="images">Photos (Split with comma)</label>
+                            <label for="images">Fotoğraflar (Virgül ile ayırın)</label>
                             <textarea class="form-control" id="images"></textarea>
                         </div>
                         
@@ -61,9 +61,9 @@
                 </div>
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h5 class="card-title">Useful Links</h5>
+                        <h5 class="card-title">İşe Yarayacak Linkler</h5>
                         <ul class="list-style">
-                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=872">Tasks & Workshifts</a></li>
+                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=872">Görevlendirme & Vardiya</a></li>
                             <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
                         </ul>
                     </div>
@@ -72,92 +72,92 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Report Title</h5>
-                        <p id="bbtitle"><span id="inspsup">Inspector/Supervisor</span> - <span id="streetn">Street Name</span> - <span id="datetext">DD/MMM/YYYY</span></p>
-                        <h5 class="card-title">Copy BBcode</h5>
+                        <h5 class="card-title">Rapor Başlığı</h5>
+                        <p id="bbtitle"><span id="inspsup">Supervisor</span> - <span id="streetn">Sokak Adı</span> - <span id="datetext">GG/AAA/YYYY</span></p>
+                        <h5 class="card-title">BBCode'ı Kopyala</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]INSPECTOR TASK REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]DENETİM GÖREVLENDİRME RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]INSPECTOR TASK REPORT[/color][/b][/size][/center][hr][/hr]<br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]DENETİM GÖREVLENDİRME RAPORU[/color][/b][/size][/center][hr][/hr]<br />
                             [br][/br]<br />
-                            [justify]This document serves as a task-creating form for inspectors and supervisors that patrol San Andreas and stumble upon enviornmental hazards, graffiti removal, crime scene clean-ups, water and sewage treatment, power and energy maintenance, garbage disposal, illegal dumping of hazard materials, etc.
-                            Upon creation of the task, technicians are responding to the task and provide the required maintenance or service. Supervisors will perform physical check-ups once the technician has completed their task. Supervisors will sign it off as handled. <br />
+                            [justify]Bu belge, San Andreas'ta devriye gezen ve çevresel tehlikeler, grafiti kaldırma, olay yeri temizleme, su ve kanalizasyon arıtma, güç ve enerji bakımı, çöp imhası, tehlikeli maddelerin yasadışı dökümü vb. ile karşılaşan müfettişler ve süpervizörler için bir görev oluşturma formu olarak hizmet vermektedir.
+                            Görevin oluşturulmasının ardından teknisyenler göreve yanıt verir ve gerekli bakım veya hizmeti sağlar. Teknisyen görevini tamamladıktan sonra gözetmenler fiziksel kontroller gerçekleştirecektir. Gözetmenler görevi tamamlandı olarak imzalayacaktır. <br />
                             <br />
-                            Certain tasks may award a bonus payment of funds to the technician(s) involved in handling the request. It is therefore important that all attending technicians are listed onto the Public Service Report to ensure each technician receives the payment. Bonus payments are awarded once the entire task is complete at the discretion of the Public Works Director.<br />
+                            Belirli görevler, talebin yerine getirilmesinde görev alan teknisyen(ler)e bonus fon ödemesi yapabilir. Bu nedenle, her teknisyenin ödemeyi almasını sağlamak için katılan tüm teknisyenlerin Kamu Hizmeti Raporunda listelenmesi önemlidir. Bonus ödemeleri, Public Works Director'ın takdirine bağlı olarak tüm görev tamamlandığında verilir.<br />
                             [br][/br][/justify]<br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]TASK DETAILS[/color][/b][/size][/center][hr][/hr]<br />
-                            [list=none][b]Task Added By: [/b] <br />
-                            <span id="nameS">Firstname Lastname</span> - <span id="currpos">Current Position</span><br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]GÖREVLENDİRME DETAYLARI[/color][/b][/size][/center][hr][/hr]<br />
+                            [list=none][b]Görevlendiren: [/b] <br />
+                            <span id="nameS">İsim Soyisim</span> - <span id="currpos">Güncel Rütbesi</span><br />
                             <br />
-                            [b]Task Bonus: [/b] <br />
-                            $2.500 per Technician<br />
+                            [b]Görev Bonusu: [/b] <br />
+                            Teknisyen başına $2.500<br />
                             <br />
-                            [b]Task Location: [/b] <br />
-                            <span id="taskloc">Location of task</span><br />
+                            [b]Görev Konumu: [/b] <br />
+                            <span id="taskloc">Görevin konumu</span><br />
                             <br />
-                            [b]Task Details: [/b] <br />
+                            [b]Görev Detayları: [/b] <br />
                             <span id="narrativetext"></span><br />
 
-                            [b]Task Photographs (if available): [/b] <br />
-                            [altspoiler=TASK SCREENSHOT]<br />
-                            <span id="imgs">[img]imagehere[/img]</span><br />
+                            [b]Görev Fotoğrafları (eğer mümkünse): [/b] <br />
+                            [altspoiler=GÖREV FOTOĞRAFLARI]<br />
+                            <span id="imgs">[img]görsel buraya[/img]</span><br />
                             [/altspoiler]<br />
                             <br />
                             [/justify]<br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]TECHNICIAN INFORMATION[/color][/b][/size][/center][hr][/hr]<br />
-                            On partial or full completion of this job, a PSR should be completed. This should detail all the technicians that assist in that. You do not need to complete one per technician, just one that lists all technicians in attendance. Please let the task issuer know that you have completed the task by adding a note to the task with the access link to the report you have created. <br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]TEKNİSYEN BİLGİLENDİRMESİ[/color][/b][/size][/center][hr][/hr]<br />
+                            Bu iş kısmen veya tamamen tamamlandığında bir KHR doldurulmalıdır. Bu, buna yardımcı olan tüm teknisyenleri içermelidir. Her teknisyen için bir tane doldurmanıza gerek yoktur, sadece katılan tüm teknisyenleri listeleyen bir tane doldurmanız yeterlidir. Lütfen görevi düzenleyen kişiye, oluşturduğunuz rapora erişim bağlantısıyla birlikte göreve bir not ekleyerek görevi tamamladığınızı bildirin.<br />
                             <br />
-                            ((Use the below BB Code to post a reply, linking your PSR)).<br />
+                            ((PSR'nizi linkleyerek bir cevap göndermek için aşağıdaki BB Kodunu kullanın)).<br />
                             <br />
-                            [b][color=#5597D0]TECHNICIAN RESPONSE:[/color][/b]<br />
+                            [b][color=#5597D0]TEKNİSYEN CEVABI:[/color][/b]<br />
                             [code]<br />
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]TECHNICIAN COMPLETION REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]TEKNİSYEN TAMAMLAMA RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]TECHNICIAN RESPONSE[/color][/b][/size][/center][hr][/hr]<br />
-                            I [Technician Name] can confirm that this task has been partially / fully completed as per the task detailed in the Task Report. I know that making a false completion report could result in no bonus payment being received. <br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]TEKNİSYEN CEVABI[/color][/b][/size][/center][hr][/hr]<br />
+                            Ben [Teknisyen Adı], bu görevin Görevlendirme Raporunda detaylandırılan göreve göre kısmen / tamamen tamamlandığını onaylayabilirim. Yanlış bir tamamlama raporu hazırlamanın prim ödemesi alınmamasına neden olabileceğini biliyorum. <br />
                             <br />
-                            [url=LINKTOPSR]Public Service Report Form[/url]<br />
+                            [url=KHRLİNKİ]Kamu Hizmeti Rapor Formu[/url]<br />
                             [/code]<br />
                             <br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]SUPERVISOR INFORMATION[/color][/b][/size][/center][hr][/hr]<br />
-                            Once a response has been received from the submitting Technician, you must attend the site of the task and check their work to ensure it has been completed to a satisfactory condition. Once you are happy that the work has been completed, please complete a supervisor review form. <br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]SUPERVISOR BİLGİLENDİRMESİ[/color][/b][/size][/center][hr][/hr]<br />
+                            Teknisyenden bir yanıt alındıktan sonra, görev yerine gitmeli ve işin tatmin edici bir şekilde tamamlandığından emin olmak için çalışmalarını kontrol etmelisiniz. İşin tamamlandığından emin olduktan sonra, lütfen bir süpervizör inceleme formu doldurun. <br />
                             <br />
-                            ((Do not archive this report after you have reviewed it. The Director will do so once it has been placed on the bonus payment list to ensure none are missed.))<br />
+                            ((Bu raporu inceledikten sonra arşivlemeyin. Director, hiçbirinin atlanmadığından emin olmak için bonus ödeme listesine yerleştirildikten sonra bunu yapacaktır.))<br />
                             <br />
-                            [b][color=#5597D0]SUPERVISOR REVIEW:[/color][/b]<br />
+                            [b][color=#5597D0]SUPERVISOR İNCELEMESİ:[/color][/b]<br />
                             [code]<br />
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]SUPERVISOR REVIEW[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]SUPERVISOR İNCELEMESİ[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [hr][/hr][center][size=140][b][color=#5597D0]SUPERVISOR REVIEW[/color][/b][/size][/center][hr][/hr]<br />
-                            I [Supervisor Name], [Position Name], can confirm that I have physically attended the site in which the task is located. I have checked the work completed by the technician(s) and I am happy to confirm that it has been completed to a satisfactory condition. I am happy that any bonus payment that is set to be awarded can be.<br />
+                            [hr][/hr][center][size=140][b][color=#5597D0]SUPERVISOR İNCELEMESİ[/color][/b][/size][/center][hr][/hr]<br />
+                            Ben [Süpervizör Adı], [Pozisyon Adı], görevin bulunduğu sahaya fiziksel olarak katıldığımı teyit edebilirim. Teknisyen(ler) tarafından tamamlanan işi kontrol ettim ve tatmin edici bir durumda tamamlandığını onaylamaktan mutluluk duyuyorum. Verilecek herhangi bir bonus ödemesinin yapılabileceğinden memnunum.<br />
                             [/code]<br />
                         </p>
-                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
-                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Başlığı Kopyala</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Kodu Kopyala</button>
                     </div>
                 </div>
             </div>
         </div>
-        <p>Coded with Love by ThePlod</p>
+        <p>ThePlod tarafından kodlandı, Syllania tarafından yerelleştirildi.</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script>
         $(document).ready(function(){
-            var date = moment.utc();
+            var date = moment.utc().add(3, 'hours');
             var currentDate = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
             $("#datetext").text(currentDate);

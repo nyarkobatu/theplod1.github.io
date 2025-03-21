@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LS Gov | Public Service Reports</title>
+    <title>LS Gov | Toplum Hizmeti Raporları</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -17,41 +17,41 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><h5 class="card-title">LSGov | Public Service Reports</h5></center>
+                        <center><h5 class="card-title">LSGov | Kamu Hizmeti Raporları</h5></center>
                         <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
                         <div class="form-group">
-                            <label for="datetime">Start Date & Time</label>
-                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                            <label for="datetime">Başlangıç Tarihi & Zamanı</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AA/YYYY SS:DD">
                         </div>
                         <div class="form-group">
-                            <label for="datetime">End Date & Time</label>
-                            <input type="text" id="datetimeend" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                            <label for="datetime">Bitiş Tarihi & Zamanı</label>
+                            <input type="text" id="datetimeend" style="text-transform: uppercase;" class="form-control" placeholder="GG/AA/YYYY SS:DD">
                         </div>
                         <div class="form-group">
-                            <label for="technicians">Handling Technician(s)</label>
-                            <input type="text" id="technicians" class="form-control" placeholder="Technician(s) Name">
+                            <label for="technicians">İlgili Teknisyen(ler)</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Teknisyen isimleri">
                         </div>
                         <div class="form-group">
-                            <label for="techniciansbadge">Technician(s) Badge Numbers:</label>
-                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Technician(s) badge numbers">
+                            <label for="techniciansbadge">Teknisyen Rozet Numara(ları):</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Teknisyen(lerin) rozet numarası">
                         </div>
                         <div class="form-group">
-                            <label for="typeofservice">Type of Service</label>
+                            <label for="typeofservice">Hizmet Türü</label>
                             <select class="form-control" id="typeofservice">
-                                <option value="" selected disabled>Please Select</option>
-                                <option value="C">Cleaning</option>
-                                <option value="I">Inspection</option>
-                                <option value="M">Maintenance</option>
-                                <option value="L">Landscaping</option>
-                                <option value="O">Other</option>
+                                <option value="" selected disabled>Lütfen Seçin</option>
+                                <option value="C">Temizlik</option>
+                                <option value="I">Denetim</option>
+                                <option value="M">Bakım</option>
+                                <option value="L">Peyzaj</option>
+                                <option value="O">Diğer</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="narrative">Narrative</label>
+                            <label for="narrative">Anlatım</label>
                             <textarea class="form-control" id="narrative"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="images">Images (Split with comma)</label>
+                            <label for="images">Görseller (Virgül ile ayırın)</label>
                             <textarea class="form-control" id="images"></textarea>
                         </div>
                         
@@ -59,9 +59,9 @@
                 </div>
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h5 class="card-title">Useful Links</h5>
+                        <h5 class="card-title">İşe Yarayacak Linkler</h5>
                         <ul class="list-style">
-                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=874">Public Service Reports</a></li>
+                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=874">Kamu Hizmeti Raporları</a></li>
                             <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
                         </ul>
                     </div>
@@ -70,56 +70,56 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Report Title</h5>
-                        <p id="bbtitle">[PSR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
-                        <h5 class="card-title">Copy BBcode</h5>
+                        <h5 class="card-title">Rapor Başlığı</h5>
+                        <p id="bbtitle">[PSR] - <span id="datetext">GG/AA/YYYY</span> (<span id="servicetypetext">TÜR</span>) - <span id="techbadge">ROZET NUMARALARI</span></p>
+                        <h5 class="card-title">BBcode'u Kopyala</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]TECHNICIAN PUBLIC SERVICE REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]TEKNİSYEN KAMU HİZMETİ RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Genel Bilgilendirme[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
                             <br />
-                            [b]START DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br />
-                            [b]END DATE & TIME[/b]: <span id="datetimetextend">DD/MMM/YYYY HH:MM</span><br />
+                            [b]BAŞLANGIÇ TARİHİ & ZAMANI[/b]: <span id="datetimetext">GG/AA/YYYY SS:DD</span><br />
+                            [b]BİTİŞ TARİHİ & ZAMANI[/b]: <span id="datetimetextend">GG/AA/YYYY SS:DD</span><br />
                             <br />
-                            [b]HANDLING TECHNICIANS[/b]: <span id="techtext">Name here</span><br />
+                            [b]İLGİLİ TEKNİSYENLER[/b]: <span id="techtext">İsim buraya</span><br />
                             <br />
-                            [b]TYPE OF SERVICE[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
-                            <span id="cleaningText">☐</span> Cleaning[color=transparent]----------------..--[/color]<span id="inspectText">☐</span> Inspection<br />
-                            <span id="maintText">☐</span> Maintenance[color=transparent]---------------[/color]<span id="landscapeText">☐</span> Landscaping[color=transparent].----------[/color]<span id="otherText">☐</span> Other<br />
+                            [b]HİZMET TÜRÜ[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="cleaningText">[cb]</span> Temizlik[color=transparent]----------------..--[/color]<span id="inspectText">[cb]</span> Denetim<br />
+                            <span id="maintText">[cb]</span> Bakım[color=transparent]---------------[/color]<span id="landscapeText">[cb]</span> Peyzaj[color=transparent].----------[/color]<span id="otherText">[cb]</span> Diğer<br />
                             <br />
                             <br />
                             [/size][/list][/list][/divbox]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]Service Details[/color][/b][/center][/divbox][divbox=transparent]<br />
-                            [center][size=90]Provide the necessary information about the provided service below, such as the location of the incident and the applied measures. <br />
-                            In case of a vehicle towing/impound ensure to provide information about the vehicle make and model, as well as the plate.[/center][/size]<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Hizmet Detayları[/color][/b][/center][/divbox][divbox=transparent]<br />
+                            [center][size=90]Aşağıda verilen hizmetle ilgili olarak olayın yeri ve uygulanan önlemler gibi gerekli bilgileri sağlayınız. <br />
+                            Bir aracın çekilmesi/el konulması durumunda aracın markası, modeli ve plakası hakkında bilgi verdiğinizden emin olun.[/center][/size]<br />
                             <br />
-                            [list=none][list=none][b]NARRATIVE[/b]: <span id="narrativetext">Comprehensive Answer</span><br />
+                            [list=none][list=none][b]ANLATIM[/b]: <span id="narrativetext">Detaylı Cevap</span><br />
                             <br />
                             <br />
                             [altspoiler=OOC RP SCREENSHOT]<br />
-                            <span id="imgs">[img]imagehere[/img]</span><br/>
+                            <span id="imgs">[img]görsel buraya[/img]</span><br/>
                             [/altspoiler]<br />
                             <br />
                             [/list][/list][/divbox]<br />
                         </p>
-                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
-                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Başlığı Kopyala</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Kodu Kopyala</button>
                     </div>
                 </div>
             </div>
         </div>
-        <p>Coded with Love by ThePlod</p>
+        <p>ThePlod tarafından kodlandı, Syllania tarafından yerelleştirildi.</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script>
         $(document).ready(function(){
-            var date = moment.utc();
+            var date = moment.utc().add(3, 'hours');
             var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
             var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
@@ -154,39 +154,39 @@
                 var typeValue = event.target.value
                 $("#servicetypetext").text(typeValue);
                 if(typeValue == 'C') {
-                    $("#cleaningText").text("☑");
-                    $("#inspectText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#landscapeText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#cleaningText").text("[cbc]");
+                    $("#inspectText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#landscapeText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'I') {
-                    $("#cleaningText").text("☐");
-                    $("#inspectText").text("☑");
-                    $("#maintText").text("☐");
-                    $("#landscapeText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#cleaningText").text("[cb]");
+                    $("#inspectText").text("[cbc]");
+                    $("#maintText").text("[cb]");
+                    $("#landscapeText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'M') {
-                    $("#cleaningText").text("☐");
-                    $("#inspectText").text("☐");
-                    $("#maintText").text("☑");
-                    $("#landscapeText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#cleaningText").text("[cb]");
+                    $("#inspectText").text("[cb]");
+                    $("#maintText").text("[cbc]");
+                    $("#landscapeText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'L') {
-                    $("#cleaningText").text("☐");
-                    $("#inspectText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#landscapeText").text("☑");
-                    $("#otherText").text("☐");
+                    $("#cleaningText").text("[cb]");
+                    $("#inspectText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#landscapeText").text("[cbc]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'O') {
-                    $("#cleaningText").text("☐");
-                    $("#inspectText").text("☐");
-                    $("#maintText").text("☐");
-                    $("#landscapeText").text("☐");
-                    $("#otherText").text("☑");
+                    $("#cleaningText").text("[cb]");
+                    $("#inspectText").text("[cb]");
+                    $("#maintText").text("[cb]");
+                    $("#landscapeText").text("[cb]");
+                    $("#otherText").text("[cbc]");
                 }
                 
             });

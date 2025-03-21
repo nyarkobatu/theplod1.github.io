@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LS Gov | Public Service Reports</title>
+    <title>LS Gov | Kaza Raporları</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -17,40 +17,40 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><h5 class="card-title">LSGov | Incident Reports</h5></center>
-                        <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center>
+                        <center><h5 class="card-title">LSGov | Kaza Raporları</h5></center>
+                        <a href="/"> <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center> </a>
                         <div class="form-group">
-                            <label for="datetime">Incident Date & Time</label>
-                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="DD/MMM/YYYY HH:MM">
+                            <label for="datetime">Kaza Tarihi & Saati</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AAA/YYYY SS:DD">
                         </div>
                         <div class="form-group">
-                            <label for="technicians">Employee Involved</label>
-                            <input type="text" id="technicians" class="form-control" placeholder="Employee Name">
+                            <label for="technicians">Dahil Olan Personel</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Personel Adı">
                         </div>
                         <div class="form-group">
-                            <label for="location">Incident location</label>
-                            <input type="text" id="location" class="form-control" placeholder="Incident Location">
+                            <label for="location">Kaza Bölgesi</label>
+                            <input type="text" id="location" class="form-control" placeholder="Kaza Bölgesi">
                         </div>
                         <div class="form-group">
-                            <label for="techniciansbadge">Technician(s) Badge Numbers:</label>
-                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Technician(s) badge numbers">
+                            <label for="techniciansbadge">Teknisyen(lerin) Rozet Numarası:</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Teknisyen(lerin) rozet numarası">
                         </div>
                         <div class="form-group">
-                            <label for="typeofservice">Type of Incident</label>
+                            <label for="typeofservice">Kaza Türü</label>
                             <select class="form-control" id="typeofservice">
-                                <option value="" selected disabled>Please Select</option>
-                                <option value="T">Traffic Collision</option>
-                                <option value="A">Accident / Injury</option>
-                                <option value="V">Violence</option>
-                                <option value="O">Other</option>
+                                <option value="" selected disabled>Lütfen Seçin</option>
+                                <option value="T">Trafik Kazası</option>
+                                <option value="A">İş Kazası / Yaralanma</option>
+                                <option value="V">Şiddet</option>
+                                <option value="O">Diğer</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="narrative">Narrative</label>
+                            <label for="narrative">Anlatım</label>
                             <textarea class="form-control" id="narrative"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="images">Images (Split with comma)</label>
+                            <label for="images">Görseller (Virgün ile ayırın)</label>
                             <textarea class="form-control" id="images"></textarea>
                         </div>
                         
@@ -58,9 +58,9 @@
                 </div>
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h5 class="card-title">Useful Links</h5>
+                        <h5 class="card-title">Önemli Linkler</h5>
                         <ul class="list-style">
-                            <li><a target="_blank" href="https://gov.gta.world/viewforum.php?f=906">Incident Reports</a></li>
+                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=906">Kaza Raporları</a></li>
                             <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
                         </ul>
                     </div>
@@ -69,66 +69,66 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Report Title</h5>
-                        <p id="bbtitle">[IR] - <span id="datetext">DD/MMM/YYYY</span> (<span id="servicetypetext">TYPE</span>) - <span id="techbadge">BADGE NUMBERS</span></p>
-                        <h5 class="card-title">Copy BBcode</h5>
+                        <h5 class="card-title">Rapor Başlığı</h5>
+                        <p id="bbtitle">[IR] - <span id="datetext">GG/AAA/YYYY</span> (<span id="servicetypetext">TÜR</span>) - <span id="techbadge">ROZET NUMARALARI</span></p>
+                        <h5 class="card-title">BBcode'ı Kopyala</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]INCIDENT REPORT[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]KAZA RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]General Information[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br /><br />
-                            [b]INCIDENT DATE & TIME[/b]: <span id="datetimetext">DD/MMM/YYYY HH:MM</span><br /><br />
-                            [b]EMPLOYEE INVOLVED[/b]: <span id="techtext">Name here</span><br /><br />
-                            [b]INCIDENT LOCATION[/b]: <span id="locationtext">Location Name</span><br />
-                            [b]TYPE OF INCIDENT[/b] [size=80] ([i]Mark with ☑ where applicable.[/i])[/size]<br />
-                            <span id="tcText">☐</span> Traffic Collision[color=transparent]---..-----[/color]<span id="accidentText">☐</span> Accident / Injury<br />
-                            <span id="violenceText">☐</span> Violence[color=transparent]---------------[/color]<span id="otherText">☐</span> Other<br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Genel Bilgilendirme[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br /><br />
+                            [b]KAZA TARİHİ & SAATİ[/b]: <span id="datetimetext">GG/AAA/YYYY SS:DD</span><br /><br />
+                            [b]DAHİL OLAN PERSONEL[/b]: <span id="techtext">İsim buraya</span><br /><br />
+                            [b]KAZA BÖLGESİ[/b]: <span id="locationtext">Bölgenin Adresi</span><br />
+                            [b]KAZA TÜRÜ[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="tcText">[cb]</span> Trafik Kazası[color=transparent]---..-----[/color]<span id="accidentText">[cb]</span> İş Kazası / Yaralanma<br />
+                            <span id="violenceText">[cb]</span> Şiddet[color=transparent]---------------[/color]<span id="otherText">[cb]</span> Diğer<br />
                             [/size][/list][/list][/divbox]<br />
-                            [divbox=#497a57][center][b][color=#FFFFFF]Incident Details[/color][/b][/center][/divbox][divbox=transparent]<br />
-                            [center][size=90]Please provide as much detail as you can about the incident that you are reporting. If this involves an injury, please detail what injuries and if you required any <br />
-                            medical treatment. If it is an incident involving violence, please detail what was happening at the time, and what the level of violence was.  [/center][/size]<br />
-                            [list=none][list=none][b]NARRATIVE[/b]: <br />
-                            <span id="narrativetext">Comprehensive Answer</span><br />
+                            [divbox=#497a57][center][b][color=#FFFFFF]Kaza Detayları[/color][/b][/center][/divbox][divbox=transparent]<br />
+                            [center][size=90]Lütfen bildirdiğiniz olay hakkında olabildiğince ayrıntılı bilgi verin. Eğer bir yaralanma söz konusuysa, lütfen hangi yaralanmalar olduğunu ve herhangi bir tıbbi <br />
+                            tedaviye ihtiyaç duyup duymadığınızı detaylandırın. Şiddet içeren bir olay ise, lütfen o sırada neler olduğunu ve şiddetin seviyesini detaylandırın.  [/center][/size]<br />
+                            [list=none][list=none][b]ANLATIM[/b]: <br />
+                            <span id="narrativetext">Detaylı Cevap</span><br />
                             [altspoiler=OOC RP SCREENSHOT]<br />
                             [img]imagehere[/img][/altspoiler]<br />
                             [/list][/list][/divbox]<br />
                             <br />
-                            Supervisor Response Format<br />
+                            Supervisor Cevap Formatı<br />
                             [code]<br />
-                            [color=#535a6c][b][size=130]Secretary / Supervisor Review[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=130]Secretary / Supervisor İncelemesi[/size][/b][/color][hr][/hr]<br />
                             [br][/br]<br />
-                            [list=none][b]Name[/b]<br />
-                            Firstname Lastname<br />
+                            [list=none][b]İsim[/b]<br />
+                            Ad Soyad<br />
                             <br />
-                            [b]Position[/b]<br />
-                            Current Position<br />
+                            [b]Rütbe[/b]<br />
+                            Güncel Rütbe<br />
                             <br />
-                            [b]Director / Deputy Director informed?[/b] (If you deem it as a serious incident)<br />
-                            Yes/No<br />
+                            [b]Direktöre / Deputy Direktöre haber verildi mi?[/b] (Eğer ciddi bir kaza olduğunu düşünüyorsanız)<br />
+                            Evet/Hayır<br />
                             <br />
-                            [b]Review[/b]<br />
-                            Details<br />
+                            [b]İnceleme[/b]<br />
+                            Detaylar buraya<br />
                             [/list]<br />
                             <br />
                             [br][/br]<br />
                         </p>
-                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Copy Title</button>
-                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Copy Code</button>
+                        <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Başlığı Kopyala</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Kodu Kopyala</button>
                     </div>
                 </div>
             </div>
         </div>
-        <p>Coded with Love by ThePlod</p>
+        <p>ThePlod tarafından kodlandı, Syllania tarafından yerelleştirildi.</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script>
         $(document).ready(function(){
-            var date = moment.utc();
+            var date = moment.utc().add(3, 'hours');
             var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
             var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
@@ -161,28 +161,28 @@
                 var typeValue = event.target.value
                 $("#servicetypetext").text(typeValue);
                 if(typeValue == 'T') {
-                    $("#tcText").text("☑");
-                    $("#accidentText").text("☐");
-                    $("#violenceText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#tcText").text("[cbc]");
+                    $("#accidentText").text("[cb]");
+                    $("#violenceText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'A') {
-                    $("#tcText").text("☐");
-                    $("#accidentText").text("☑");
-                    $("#violenceText").text("☐");
-                    $("#otherText").text("☐");
+                    $("#tcText").text("[cb]");
+                    $("#accidentText").text("[cbc]");
+                    $("#violenceText").text("[cb]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'V') {
-                    $("#tcText").text("☐");
-                    $("#accidentText").text("☐");
-                    $("#violenceText").text("☑");
-                    $("#otherText").text("☐");
+                    $("#tcText").text("[cb]");
+                    $("#accidentText").text("[cb]");
+                    $("#violenceText").text("[cbc]");
+                    $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'O') {
-                    $("#tcText").text("☐");
-                    $("#accidentText").text("☐");
-                    $("#violenceText").text("☐");
-                    $("#otherText").text("☑");
+                    $("#tcText").text("[cb]");
+                    $("#accidentText").text("[cb]");
+                    $("#violenceText").text("[cb]");
+                    $("#otherText").text("[cbc]");
                 }
                 
             });
