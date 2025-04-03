@@ -1,0 +1,61 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.125);
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --alert-bg: #fff3cd;
+    --alert-border: #ffecb5;
+    --alert-text: #664d03;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f8f9fa;
+    --card-bg: #1e1e1e;
+    --card-border: #2d2d2d;
+    --input-bg: #2d2d2d;
+    --input-border: #3d3d3d;
+    --alert-bg: #332701;
+    --alert-border: #4a3a05;
+    --alert-text: #ffd351;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-color);
+}
+
+.alert-warning {
+    background-color: var(--alert-bg);
+    border-color: var(--alert-border);
+    color: var(--alert-text);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+[data-theme="dark"] #darkModeToggle i {
+    transform: rotate(180deg);
+}
+

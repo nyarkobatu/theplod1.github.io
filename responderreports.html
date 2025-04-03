@@ -10,9 +10,37 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <style id="initial-theme">
+        /* Sistem/browser tema bilgisine göre initial stil */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #212529;
+            /* Diğer light mode değişkenleri */
+        }
+        
+        :root[data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f8f9fa;
+            /* Diğer dark mode değişkenleri */
+        }
+    </style>
+    <script>
+        // Sayfa yüklenmeden önce tema kontrolü
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 
 <body>
+    <div class="dark-mode-toggle">
+        <button id="darkModeToggle" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-moon-fill"></i> Dark Mode
+        </button>
+    </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
@@ -262,7 +290,22 @@
                 }
                 
             });
-        }); 
+        });
+        function showSweetAlert() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Kopyalandı!',
+        showConfirmButton: false,
+        timer: 2000,
+        toast: true,
+        background: isDark ? '#2d2d2d' : '#f8f9fa',
+        color: isDark ? '#f8f9fa' : '#212529',
+        width: '300px'
+    });
+}
         function copy_data(containerid) {
             var range = document.createRange();
             range.selectNode(containerid); //changed here
@@ -270,8 +313,71 @@
             window.getSelection().addRange(range); 
             document.execCommand("copy");
             window.getSelection().removeAllRanges();
-            alert("BBCode Copied");
+            showSweetAlert();
         }
+
+// Dark Mode Toggle Fonksiyonu
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Animasyon sınıfını ekleme fonksiyonu
+    function applyTransition() {
+        document.body.classList.add('theme-transition');
+        setTimeout(() => {
+            document.body.classList.remove('theme-transition');
+        }, 300); // Animasyon süresi kadar bekletiyoruz
+    }
+    
+    // Sistem tercihini kontrol et
+    if (prefersDarkScheme.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
+    }
+    
+    // LocalStorage'dan tema durumunu yükle
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
+    } else if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        darkModeToggle.innerHTML = '<i class="bi bi-moon-fill"></i> Dark Mode';
+    }
+    
+    // Toggle butonu event listener
+    darkModeToggle.addEventListener('click', function() {
+        applyTransition(); // Geçişten hemen önce animasyon sınıfını ekle
+        let theme;
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            theme = 'light';
+            darkModeToggle.innerHTML = '<i class="bi bi-moon-fill"></i> Dark Mode';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            theme = 'dark';
+            darkModeToggle.innerHTML = '<i class="bi bi-sun-fill"></i> Light Mode';
+        }
+        localStorage.setItem('theme', theme);
+    });
+    
+    // Sistem teması değişikliklerini dinle
+    prefersDarkScheme.addEventListener('change', e => {
+        applyTransition(); // Geçişten hemen önce animasyon sınıfını ekle
+        const newTheme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        darkModeToggle.innerHTML = newTheme === 'dark' 
+            ? '<i class="bi bi-sun-fill"></i> Light Mode' 
+            : '<i class="bi bi-moon-fill"></i> Dark Mode';
+    });
+});
+// Sayfa yüklendiğinde animasyon sınıfını eklemeyin
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        document.body.classList.remove('theme-transition');
+    }, 100);
+});
     </script>
 </body>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LS Gov | Kamu Hizmeti Raporları</title>
+    <title>LS Gov | Parking Enforcement Responder Reporu</title>
     <link rel="icon" href="https://i.ibb.co/Mc58JMV/Logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -46,51 +46,64 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <center><h5 class="card-title">LSGov | Kamu Hizmeti Raporları</h5></center>
+                        <center><h5 class="card-title">LSGov | Parking Enforcement Responder Raporları</h5></center>
                         <a href="/"> <center><img src="https://i.ibb.co/Mc58JMV/Logo.png" width="150px"></center> </a>
                         <div class="form-group">
-                            <label for="datetime">Başlangıç Tarihi & Zamanı</label>
-                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AA/YYYY SS:DD">
+                            <label for="datetime">Tarih & Saat</label>
+                            <input type="text" id="datetime" style="text-transform: uppercase;" class="form-control" placeholder="GG/AAA/YYYY SS:DD">
                         </div>
                         <div class="form-group">
-                            <label for="datetime">Bitiş Tarihi & Zamanı</label>
-                            <input type="text" id="datetimeend" style="text-transform: uppercase;" class="form-control" placeholder="GG/AA/YYYY SS:DD">
+                            <label for="technicians">İlgili Inspector(lar)</label>
+                            <input type="text" id="technicians" class="form-control" placeholder="Inspector Adları">
                         </div>
                         <div class="form-group">
-                            <label for="technicians">İlgili Teknisyen(ler)</label>
-                            <input type="text" id="technicians" class="form-control" placeholder="Teknisyen isimleri">
+                            <label for="techniciansbadge">Inspector(ların) Rozet Numarası:</label>
+                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Inspector(ların) Rozet Numarası">
                         </div>
                         <div class="form-group">
-                            <label for="techniciansbadge">Teknisyen Rozet Numara(ları):</label>
-                            <input type="text" id="techniciansbadge" class="form-control" placeholder="Teknisyen(lerin) rozet numarası">
-                        </div>
-                        <div class="form-group">
-                            <label for="typeofservice">Hizmet Türü</label>
+                            <label for="typeofservice">Hizmet Türleri</label>
                             <select class="form-control" id="typeofservice">
                                 <option value="" selected disabled>Lütfen Seçin</option>
-                                <option value="C">Temizlik</option>
-                                <option value="I">Denetim</option>
-                                <option value="M">Bakım</option>
-                                <option value="L">Peyzaj</option>
-                                <option value="O">Diğer</option>
+                                <option value="T">Çekici</option>
+                                <option value="TI">Impound</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="impound">Impound Süresi</label>
+                            <input type="text" id="impound" value="N/A" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="plaka">Araç Plakası</label>
+                            <input type="text" id="plaka" placeholder="ABA111" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="reqagency">Talep Gerçekleştiren Kurum</label>
+                            <select class="form-control" id="reqagency">
+                                <option value="" selected disabled>Lütfen Seçin</option>
+                                <option value="LSPD">LSPD</option>
+                                <option value="LSSD">LSSD</option>
+                                <option value="LSFD">LSFD</option>
+                                <option value="DMEC">DMEC</option>
+                                <option value="ULSA">ULSA</option>
+                                <option value="OTHER">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reqofficial">Talep Gerçekleştiren Yetkili:</label>
+                            <input type="text" id="reqofficial" class="form-control" placeholder="Officer/Deputy Soyadı (#rozetnumarası)">
                         </div>
                         <div class="form-group">
                             <label for="narrative">Anlatım</label>
                             <textarea class="form-control" id="narrative"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="images">Görseller (Virgül ile ayırın)</label>
-                            <textarea class="form-control" id="images"></textarea>
                         </div>
                         
                     </div>
                 </div>
                 <div class="card mt-2">
                     <div class="card-body">
-                        <h5 class="card-title">İşe Yarayacak Linkler</h5>
+                        <h5 class="card-title">Önemli Linkler</h5>
                         <ul class="list-style">
-                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=874">Kamu Hizmeti Raporları</a></li>
+                            <li><a target="_blank" href="https://gov-tr.gta.world/viewforum.php?f=873">Responder Raporları</a></li>
                             <li><a target="_blank" href="https://imgur.com">Imgur</a></li>
                         </ul>
                     </div>
@@ -100,43 +113,41 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Rapor Başlığı</h5>
-                        <p id="bbtitle">[PSR] - <span id="datetext">GG/AA/YYYY</span> (<span id="servicetypetext">TÜR</span>) - <span id="techbadge">ROZET NUMARALARI</span></p>
-                        <h5 class="card-title">BBcode'u Kopyala</h5>
+                        <p id="bbtitle">[PERR] - <span id="datetext">GG/AAA/YYYY</span> (<span id="servicetypetext">TÜR</span>) - <span id="techbadge">ROZET NUMARALARI</span> - <span id="plakabas">PLAKA</span></p>
+                        <h5 class="card-title">BBCode'ı Kopyala</h5>
                         <p id="bbcode">
                             [divbox=transparent][justify]<br />
                             [table][tr][td][color=transparent]-------[/color][img]https://i.imgur.com/jygAIAD.png[/img][/td][td][hr][/hr][size=160][b]DEPARTMENT OF PUBLIC WORKS[/b][/size][color=transparent]------------------------------------------[/color]<br />
-                            [color=#535a6c][b][size=140]TEKNİSYEN KAMU HİZMETİ RAPORU[/size][/b][/color][hr][/hr]<br />
+                            [color=#535a6c][b][size=140]INSPECTOR RESPONDER RAPORU[/size][/b][/color][hr][/hr]<br />
                             [color=#535a6c][u][size=70] [right]CITY OF LOS SANTOS<br />
                             DEPARTMENT OF PUBLIC WORKS<br />
                             ELGIN AVENUE, VINEWOOD, LOS SANTOS, SA[/right][/size][/u][/color][/td][/tr][/table]<br />
                             [divbox=#497a57][center][b][color=#FFFFFF]Genel Bilgilendirme[/color][/b][/center][/divbox][divbox=transparent][size=102][list=none][list=none]<br />
                             <br />
-                            [b]BAŞLANGIÇ TARİHİ & ZAMANI[/b]: <span id="datetimetext">GG/AA/YYYY SS:DD</span><br />
-                            [b]BİTİŞ TARİHİ & ZAMANI[/b]: <span id="datetimetextend">GG/AA/YYYY SS:DD</span><br />
+                            [b]TARİH & SAAT[/b]: <span id="datetimetext">GG/AAA/YYYY SS:DD</span><br />
+                            [b]YANITLAYAN INSPECTOR(LAR)[/b]: <span id="techtext">İsimler Buraya</span><br />
                             <br />
-                            [b]İLGİLİ TEKNİSYENLER[/b]: <span id="techtext">İsim buraya</span><br />
+                            [b]HİZMET TÜRLERİ[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="towingText">[cb]</span> Çekici[color=transparent]---------..--[/color]<span id="impoundText">[cb]</span> Impound[color=transparent]-.--..-----[/color]Impound Süresi: <span id="impoundDays">N/A</span><br />
                             <br />
-                            [b]HİZMET TÜRÜ[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
-                            <span id="cleaningText">[cb]</span> Temizlik[color=transparent]----------------..--[/color]<span id="inspectText">[cb]</span> Denetim<br />
-                            <span id="maintText">[cb]</span> Bakım[color=transparent]---------------[/color]<span id="landscapeText">[cb]</span> Peyzaj[color=transparent].----------[/color]<span id="otherText">[cb]</span> Diğer<br />
+                            [b]TALEP GERÇEKLEŞTİREN KURUM[/b] [size=80] ([i]Uygun olan yerleri [cbc] ile işaretleyin.[/i])[/size]<br />
+                            <span id="lspdText">[cb]</span> LSPD[color=transparent]-------------[/color]<span id="lssdText">[cb]</span> LSSD[color=transparent]-------------[/color]<span id="lsfdText">[cb]</span> LSFD<br />
+                            <span id="dmecText">[cb]</span> DMEC[color=transparent]------------.[/color]<span id="ulsaText">[cb]</span> ULSA[color=transparent]------------..[/color]<span id="otherretext">[cb]</span> Other<br />
                             <br />
+                            [b]TALEP GERÇEKLEŞTİREN YETKİLİ[/b]: <span id="officialN">Rank Name</span><br />
                             <br />
                             [/size][/list][/list][/divbox]<br />
                             [divbox=#497a57][center][b][color=#FFFFFF]Hizmet Detayları[/color][/b][/center][/divbox][divbox=transparent]<br />
-                            [center][size=90]Aşağıda verilen hizmetle ilgili olarak olayın yeri ve uygulanan önlemler gibi gerekli bilgileri sağlayınız. <br />
-                            Bir aracın çekilmesi/el konulması durumunda aracın markası, modeli ve plakası hakkında bilgi verdiğinizden emin olun.[/center][/size]<br />
+                            [center][size=90]Aşağıda verilen hizmetle ilgili olarak olayın yeri ve uygulanan önlemler gibi gerekli bilgileri sağlayınız.<br />
+                            Bir aracın çekilmesi/el konulması durumunda, aracın markası, modeli ve plakası hakkında bilgi verdiğinizden emin olun.[/center][/size]<br />
                             <br />
-                            [list=none][list=none][b]ANLATIM[/b]: <span id="narrativetext">Detaylı Cevap</span><br />
+                            [list=none][list=none][b]ANLATIM[/b]:<br />
+                            <span id="narrativetext">Detaylı Cevap</span>
                             <br />
-                            <br />
-                            [altspoiler=OOC RP SCREENSHOT]<br />
-                            <span id="imgs">[img]görsel buraya[/img]</span><br/>
-                            [/altspoiler]<br />
-                            <br />
-                            [/list][/list][/divbox]<br />
+                            [/list][/list][/divbox]
                         </p>
                         <button class="btn btn-secondary mt-3" onclick="copy_data(bbtitle)">Başlığı Kopyala</button>
-                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">Kodu Kopyala</button>
+                        <button class="btn btn-primary mt-3" onclick="copy_data(bbcode)">BBKodu Kopyala</button>
                     </div>
                 </div>
             </div>
@@ -152,7 +163,6 @@
             var currentDate = date.format('DD/MMM/YYYY H:mm').toUpperCase();
             var currentDate2 = date.format('DD/MMM/YYYY').toUpperCase();
             document.getElementById('datetime').value = currentDate;
-            document.getElementById('datetimeend').value = currentDate;
             $("#datetimetext").text(currentDate);
             $("#datetimetextend").text(currentDate);
             $("#datetext").text(currentDate2);
@@ -174,63 +184,116 @@
             $("#techniciansbadge").on("change keypress input", function() {
                 var techbadge = $("#techniciansbadge").val();
                 $("#techbadge").text(techbadge);
-            });    
+            });
+            $("#plaka").on("change keypress input", function() {
+                var plakabas = $("#plaka").val();
+                $("#plakabas").text(plakabas);
+            });      
+            $("#reqofficial").on("change keypress input", function() {
+                var officialN = $("#reqofficial").val();
+                $("#officialN").text(officialN);
+            });  
             document.querySelector('#narrative').addEventListener('keyup', function() {
                 document.querySelector('#narrativetext').innerText = this.value;
-            });
+            });  
+            $("#impound").on("change keypress input", function() {
+                var impoundDays = $("#impound").val();
+                $("#impoundDays").text(impoundDays);
+            });  
             const selectType = document.querySelector('#typeofservice');
             selectType.addEventListener('change', (event) => {
                 var typeValue = event.target.value
                 $("#servicetypetext").text(typeValue);
-                if(typeValue == 'C') {
-                    $("#cleaningText").text("[cbc]");
-                    $("#inspectText").text("[cb]");
+                if(typeValue == 'T') {
+                    $("#towingText").text("[cbc]");
+                    $("#impoundText").text("[cb]");
                     $("#maintText").text("[cb]");
-                    $("#landscapeText").text("[cb]");
+                    $("#serviceText").text("[cb]");
                     $("#otherText").text("[cb]");
                 }
-                if(typeValue == 'I') {
-                    $("#cleaningText").text("[cb]");
-                    $("#inspectText").text("[cbc]");
+                if(typeValue == 'TI') {
+                    $("#towingText").text("[cbc]");
+                    $("#impoundText").text("[cbc]");
                     $("#maintText").text("[cb]");
-                    $("#landscapeText").text("[cb]");
+                    $("#serviceText").text("[cb]");
                     $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'M') {
-                    $("#cleaningText").text("[cb]");
-                    $("#inspectText").text("[cb]");
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
                     $("#maintText").text("[cbc]");
-                    $("#landscapeText").text("[cb]");
+                    $("#serviceText").text("[cb]");
                     $("#otherText").text("[cb]");
                 }
-                if(typeValue == 'L') {
-                    $("#cleaningText").text("[cb]");
-                    $("#inspectText").text("[cb]");
+                if(typeValue == 'SP') {
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
                     $("#maintText").text("[cb]");
-                    $("#landscapeText").text("[cbc]");
+                    $("#serviceText").text("[cbc]");
                     $("#otherText").text("[cb]");
                 }
                 if(typeValue == 'O') {
-                    $("#cleaningText").text("[cb]");
-                    $("#inspectText").text("[cb]");
+                    $("#towingText").text("[cb]");
+                    $("#impoundText").text("[cb]");
                     $("#maintText").text("[cb]");
-                    $("#landscapeText").text("[cb]");
+                    $("#serviceText").text("[cb]");
                     $("#otherText").text("[cbc]");
                 }
                 
             });
-            $("#images").on("change keypress input", function() {
-                var imgs = $("#images").val();
-                var imgss = imgs.split(","), i;
-                var allimgs = "";
-                for (i = 0; i< imgss.length; i++) {
-                    var newimg = "[img]";
-                    newimg += imgss[i];
-                    newimg += "[/img]";
-                    allimgs += newimg;
+            const selectType2 = document.querySelector('#reqagency');
+            selectType2.addEventListener('change', (event) => {
+                var typeValue = event.target.value
+                if(typeValue == 'LSPD') {
+                    $("#lspdText").text("[cbc]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
                 }
-                $("#imgs").text(allimgs);
-            }); 
+                if(typeValue == 'LSSD') {
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cbc]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
+                }
+                if(typeValue == 'LSFD') {
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cbc]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
+                }
+                if(typeValue == 'DMEC') {
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cbc]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cb]");
+                }
+                if(typeValue == 'SAPR') {
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cbc]");
+                    $("#otherretext").text("[cb]");
+                }
+                if(typeValue == 'OTHER') {
+                    $("#lspdText").text("[cb]");
+                    $("#lssdText").text("[cb]");
+                    $("#lsfdText").text("[cb]");
+                    $("#dmecText").text("[cb]");
+                    $("#ulsaText").text("[cb]");
+                    $("#otherretext").text("[cbc]");
+                }
+                
+            });
         }); 
         function showSweetAlert() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -247,6 +310,8 @@
         width: '300px'
     });
 }
+
+
         function copy_data(containerid) {
             var range = document.createRange();
             range.selectNode(containerid); //changed here
